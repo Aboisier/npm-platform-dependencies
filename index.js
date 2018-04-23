@@ -21,6 +21,8 @@ if (dependenciesObj && Object.keys(dependenciesObj).length) {
       npmArgs.push(dep.concat('@').concat(dependenciesObj[dep]))
     }
   }
+  npmArgs.push('--no-save');
+  
   var options = {
     stdio: 'inherit' // feed all child process logging into parent process
   }
