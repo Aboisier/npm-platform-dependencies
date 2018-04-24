@@ -5,6 +5,10 @@ var os = require('os')
 var platform = os.platform()
 var log = console.log
 
+if (process.env.NPMPD_PLATFORM) {
+    platform = process.env.NPMPD_PLATFORM;
+}
+
 platformArg = process.argv.find(x => /^platform=/.test(x));
 if (platformArg) {
     platform = platformArg.split('=')[1];
