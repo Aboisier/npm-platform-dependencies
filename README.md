@@ -1,4 +1,4 @@
-# NPM Platform Dependencies
+# NPM Platform Dependencies (Cactusoft fork)
 Small script that allows you to specify OS-specific dependencies in your package.json and install them only in that OS.
 
 Install via:
@@ -54,6 +54,24 @@ os frameworks (Cocoa, .NET...). This is an easy solution if you don't want to de
 the functionalities you need are already in different os specific packages.
 
 Another use case would be when dealing with wrappers of os specific programs, and you want to link to one or the other depending the platform you run your program with.
+
+## What's different in this forked version?
+We needed a way to manually specify the platform, so we implemented two different ways to go about it.
+
+### Specify platform with environment variable
+Set the "NPMPD_PLATFORM" environment variable to the desired platform. Ex.:
+`export NPMPD_PLATFORM="win32"`
+
+### Specify platform with arguments
+Pass the --platform argument. Ex.:
+`npmpd --platform=win32`
+
+### Priorities?
+From the highest priority to the lowest:
+
+1. Argument
+2. Environment variable
+3. Auto-detected
 
 ## License
 
